@@ -1,0 +1,23 @@
+@use '../../scss/' as *;
+// loading
+
+.loading {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .loading-item {
+        padding: 1rem;
+        width: 20%;
+        // height: 300px;
+        @include mobile {
+            width: 50%;
+        }
+        @include tablet {
+            width: 25%;
+        }
+    }
+}
+.loading-mobi {
+}
+
+// end loading

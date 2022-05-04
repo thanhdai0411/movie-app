@@ -1,0 +1,109 @@
+@use '../../../scss/' as * ; 
+.register-form {
+    padding-top : 100px ; 
+    background-image: url('../../../../public/images/login-background.jpg');
+    // height: 100vh;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+}
+
+
+.login-form {
+    z-index: 100;
+    background-image: url('../../../../public/images/login-background.jpg');
+    // height: 100vh;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .container {
+        padding-top: 100px;
+        width: 100%;
+    }
+    h1 {
+        margin: 1rem 0;
+        font-size: 3rem;
+    }
+    .wrap-box {
+        display: inline-flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        min-height: 370px;
+        min-width: 500px;
+        max-width: 600px;
+        border: 1px solid white;
+        border-radius: 10px;
+        @include mobile {
+            min-width: 330px ; 
+        }
+
+    }
+    input {
+        padding: 1rem;
+        font-size: 1.6rem;
+        // border  : none ;
+        outline: none;
+        margin: 0.5rem 0;
+    }
+    .btn-group-login {
+        display: flex;
+    }
+    button {
+        padding: 1rem;
+        margin: 0.5rem;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-weight: 600;
+        // color : white ;
+        .icon-gg,
+        .icon-fb {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+    }
+    .btn-login {
+        // font-size: ;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .btn-fb {
+        flex: 1;
+
+        background-color: blue;
+        color: white;
+        &:hover {
+            opacity: 0.8;
+        }
+        
+    }
+    .btn-gg {
+        flex: 1;
+
+        background-color: red;
+        color: white;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .forgot-pass {
+        text-align: left;
+        cursor: pointer;
+    }
+    h3 {
+        margin: 1rem 0;
+        font-size: 1.6rem;
+    }
+}

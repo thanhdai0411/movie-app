@@ -1,0 +1,52 @@
+@use '../../scss/' as *;
+
+.body-login {
+    background-image: url('../../../public/images/login-background.jpg');
+    // height: 100vh;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    .group-icon {
+        margin: 100px 100px;
+        // padding: 0 50px ;
+        max-width: 650px;
+        min-width: 400px;
+        @include mobile {
+            min-width: 290px;
+            margin: 150px 100px;
+        }
+        .logo-two {
+            width: 100%;
+            padding: 0 30px;
+        }
+        button {
+            width: 100%;
+            font-size: 1.8rem;
+            color: white;
+            background-color: #0063e5;
+            padding: 1.6rem 0;
+            border: none;
+            outline: none;
+            font-weight: 900;
+            @include mobile {
+                font-size: 1.6rem;
+            }
+            &:hover {
+                cursor: pointer;
+                filter: brightness(120%);
+            }
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 2rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            word-spacing: 0.2rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
