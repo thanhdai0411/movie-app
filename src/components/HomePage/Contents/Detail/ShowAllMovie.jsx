@@ -17,9 +17,9 @@ function ShowAllMovie() {
 
     let newDataFilter = data;
 
-    // newDataFilter = data.filter(
-    //     (item) => item.title.toLowerCase().indexOf(inSearch.toLowerCase()) > -1
-    // );
+    newDataFilter = data.filter(
+        (item) => item.title.toLowerCase().indexOf(inSearch.toLowerCase()) > -1
+    );
 
     // console.log(newDataFilter);
     let url = requests.fetchLoadMore(type, page);

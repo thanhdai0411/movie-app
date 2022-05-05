@@ -16,6 +16,8 @@ import { signOut } from 'firebase/auth';
 function Header() {
     const name = localStorage.getItem('name');
     const imgUser = localStorage.getItem('imgUser');
+    const userNameLogin = localStorage.getItem('loginUserName');
+
     const navigate = useNavigate();
 
     const logOut = () => {
@@ -24,6 +26,7 @@ function Header() {
                 console.log('Sign Out successfully !!!');
                 localStorage.setItem('name', '');
                 localStorage.setItem('imgUser', '');
+                localStorage.setItem('loginUserName', '');
                 navigate('/');
             })
             .catch((error) => {
@@ -36,7 +39,7 @@ function Header() {
             <div className="header__logo">
                 <img src="/images/logo.svg" alt="" width="80px" />
             </div>
-            {name && imgUser ? (
+            {(name && imgUser) || userNameLogin ? (
                 <ul className="header__nav">
                     <Link to="home">
                         <HomeIcon className="icon-nav" />
@@ -73,16 +76,20 @@ function Header() {
             )}
 
             <div className="header__user">
-                {name && imgUser ? (
+                {(name && imgUser) || userNameLogin ? (
                     <>
-                        <img
-                            src={imgUser && imgUser}
-                            alt=""
-                            width={40}
-                            height={40}
-                            className="avatar"
-                        />
-                        <span className="name-user">{name}</span>
+                        {imgUser && (
+                            <img
+                                src={imgUser && imgUser}
+                                alt=""
+                                width={40}
+                                height={40}
+                                className="avatar"
+                            />
+                        )}
+                        <span className="name-user">
+                            {name || userNameLogin || 'User'}
+                        </span>
                         <button className="btn-sign-out" onClick={logOut}>
                             SIGN OUT
                         </button>
@@ -94,11 +101,11 @@ function Header() {
                                 <button className="btn-login">LOGIN</button>
                             </Link>
                         </div>
-                        {/* <div className="header__register">
+                        <div className="header__register">
                             <Link to="register">
                                 <button className="btn-register">REGISTER</button>
                             </Link>
-                        </div> */}
+                        </div>
                     </>
                 )}
             </div>
